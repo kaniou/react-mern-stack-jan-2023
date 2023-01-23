@@ -1,4 +1,4 @@
-# https://tailwindcss.com/docs/guides/create-react-app
+# https://tailwindcss.com/docs/guides/vite
 # https://github.com/codemobiles/cm-mui-and-tailwind-demo
 # https://www.youtube.com/watch?v=hgMP2ulxPlA
 npx create-react-app cm-mui-and-tailwind-demo --template typescript
