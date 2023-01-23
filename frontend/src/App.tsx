@@ -19,16 +19,22 @@ export default function App({}: Props) {
       <Sub2 />
       <Sub3 />
       <Sub4 />
-      <MyComponent username="lek" />
+      <MyComponent username="lek" password="1234" />
     </div>
   );
 }
 
-const MyComponent = (props: any) => {
+type MyComponentProps = {
+  username: string;
+  password: string;
+};
+
+const MyComponent = (props: MyComponentProps) => {
   return (
     <div>
       <h1>MyComponent</h1>
       <h3>Username: {props.username}</h3>
+      <h3>Password: {props.password}</h3>
     </div>
   );
 };
