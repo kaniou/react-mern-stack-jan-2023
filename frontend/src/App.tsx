@@ -87,8 +87,8 @@ export default function App() {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <Header open={open} />
-      <Menu open={open} />
+      <Header open={open} handleDrawerOpen={handleDrawerOpen} />
+      <Menu open={open} handleDrawerClose={handleDrawerClose} />
       <Main open={open}>
         <DrawerHeader />
         <h1>CodeMobiles</h1>
