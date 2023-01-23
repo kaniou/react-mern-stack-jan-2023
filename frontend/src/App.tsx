@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 type Props = {};
 
@@ -11,9 +11,23 @@ export default function App({}: Props) {
   // none side-effect
   let counter = 0;
 
+  // side-effect (mvvm : [kotlin, c#, vue, react, flutter])
+  // C# think of prop (get,set)
+  const [counter2, setCounter2] = useState(0);
+
   // JSX(TSX)
   return (
     <div>
+      <button
+        onClick={() => {
+          setCounter2(counter2 + 1);
+          console.log("Counter2: " + counter2);
+        }}
+      >
+        ClickMe {counter2}
+      </button>
+
+      <br />
       <button
         onClick={() => {
           counter++;
