@@ -13,7 +13,8 @@ export default function App({}: Props) {
 
   // side-effect (mvvm : [kotlin, c#, vue, react, flutter])
   // C# think of prop (get,set)
-  const [counter2, setCounter2] = useState(0);
+  const [counter2, setCounter2] = React.useState<number>(0);
+  const [counter3, setCounter3] = useState(0);
 
   // JSX(TSX)
   return (
