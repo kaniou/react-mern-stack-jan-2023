@@ -1,11 +1,13 @@
 import * as React from "react";
+import { useState } from "react";
 
 type LoginPageProps = {
   //
 };
 
 const LoginPage: React.FC<any> = () => {
-  let user = { username: "", password: "" };
+  // let user = { username: "", password: "" };
+  const [user, setUser] = useState({ username: "", password: "" });
 
   return (
     <div>
@@ -27,7 +29,15 @@ const LoginPage: React.FC<any> = () => {
         />{" "}
         <br />
         <button type="submit">Submit</button> |
-        <button type="button">Clear</button>
+        <button
+          type="button"
+          onClick={() => {
+            user.username = "";
+            user.password = "";
+          }}
+        >
+          Clear
+        </button>
       </form>
     </div>
   );
