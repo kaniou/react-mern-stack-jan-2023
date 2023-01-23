@@ -8,10 +8,12 @@ export default function App({}: Props) {
   const tmp2: string = "codemobiles";
   const tmp3: number = 2134;
 
+  let counter = 0;
+
   // JSX(TSX)
   return (
     <div>
-      <button onClick={() => alert("Hey")}>ClickMe</button>
+      <button onClick={() => alert("Hey")}>ClickMe {counter}</button>
       <br />
       <br />
       <button>{tmp1}</button>
