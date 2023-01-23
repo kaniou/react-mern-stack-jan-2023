@@ -14,7 +14,7 @@ const LoginPage: React.FC<any> = () => {
       <form onSubmit={() => alert(JSON.stringify(user))}>
         <input
           onChange={(event) => {
-            user.username = event.target.value;
+            setUser({ username: event.target.value, password: user.password });
           }}
           type="text"
           placeholder="Username"
