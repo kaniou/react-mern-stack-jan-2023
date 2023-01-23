@@ -11,7 +11,7 @@ const LoginPage: React.FC<any> = () => {
 
   return (
     <div>
-      <span style={{ backgroundColor: "#F00" }}>1234</span>
+      <span style={{ backgroundColor: "#F00", paddingTop: 100 }}>1234</span>
       <form
         onSubmit={(event) => {
           event.preventDefault();
