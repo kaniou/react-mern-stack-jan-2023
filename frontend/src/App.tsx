@@ -24,13 +24,15 @@ export default function App({}: Props) {
 }
 
 // fn(x,y) = x2+y2
-// functional variable
 const Sub2 = () => <h1>Sub2</h1>;
 
+// variable function
 const Sub4 = () => {
-  return <h1>Sub4</h1>;
+  const tmp = "Sub4";
+  return <h1>{tmp}</h1>;
 };
 
+// body function
 function Sub3() {
   return <h1>Sub3</h1>;
 }
