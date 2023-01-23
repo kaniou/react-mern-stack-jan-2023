@@ -11,11 +11,16 @@ const LoginPage: React.FC<any> = () => {
 
   return (
     <div>
-      <form onSubmit={() => alert(JSON.stringify(user))}>
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+          alert(JSON.stringify(user));
+        }}
+      >
         <input
-          onChange={(event) => {
-            setUser({ username: event.target.value, password: user.password });
-          }}
+          onChange={(event) =>
+            setUser({ ...user, username: event.target.value })
+          }
           type="text"
           placeholder="Username"
         />{" "}
@@ -24,16 +29,15 @@ const LoginPage: React.FC<any> = () => {
           type="text"
           placeholder="Password"
           onChange={(event) => {
-            user.password = event.target.value;
+            setUser({ ...user, password: event.target.value });
           }}
         />{" "}
         <br />
         <button type="submit">Submit</button> |
         <button
           type="button"
-          onClick={() => {
-            user.username = "";
-            user.password = "";
+          onClick={(event) => {
+            setUser({ username: "", password: "" });
           }}
         >
           Clear
