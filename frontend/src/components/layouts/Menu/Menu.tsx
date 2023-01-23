@@ -74,7 +74,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 type MenuProps = {
   open: boolean;
 };
-export default function Menu(props: MenuProps) {
+export default function Menu({ open }: MenuProps) {
   const theme = useTheme();
 
   const handleDrawerOpen = () => {
