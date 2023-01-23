@@ -8,6 +8,7 @@
 - nodejs lts
 - vscode
 - docker
+- anydesk
 
 # vscode extension
 
