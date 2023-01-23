@@ -21,12 +21,14 @@ const LoginPage: React.FC<any> = () => {
           onChange={(event) =>
             setUser({ ...user, username: event.target.value })
           }
+          value={user.username}
           type="text"
           placeholder="Username"
         />{" "}
         <br />
         <input
           type="text"
+          value={user.password}
           placeholder="Password"
           onChange={(event) => {
             setUser({ ...user, password: event.target.value });
@@ -42,6 +44,8 @@ const LoginPage: React.FC<any> = () => {
         >
           Clear
         </button>
+        <br />
+        <span>#Debug: {JSON.stringify(user)}</span>
       </form>
     </div>
   );
