@@ -2,7 +2,7 @@
 
 - https://drive.google.com/file/d/1fc9SN56tPAfpq53Kq97sstw6aWw3r_Q7/view?usp=share_link
 
-# Tools
+# Tools and IDE
 
 - ottotree: https://chrome.google.com/webstore/detail/octotree-github-code-tree/bkhaagjahfmjljalopjnoealnfndnagc
 - nodejs lts
