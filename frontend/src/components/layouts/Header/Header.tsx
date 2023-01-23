@@ -70,27 +70,29 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
 }));
 
-export default function App() {
+type HeaderProps = {
+  open: boolean;
+};
+export default function Header(props: HeaderProps) {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
-    setOpen(true);
+    // setOpen(true);
   };
 
   const handleDrawerClose = () => {
-    setOpen(false);
+    // setOpen(false);
   };
 
   return (
-    <AppBar position="fixed" open={open}>
+    <AppBar position="fixed" open={props.open}>
       <Toolbar>
         <IconButton
           color="inherit"
           aria-label="open drawer"
           onClick={handleDrawerOpen}
           edge="start"
-          sx={{ mr: 2, ...(open && { display: "none" }) }}
+          sx={{ mr: 2, ...(props.open && { display: "none" }) }}
         >
           <MenuIcon />
         </IconButton>
