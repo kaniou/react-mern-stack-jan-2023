@@ -25,3 +25,8 @@ code --install-extension ms-azuretools.vscode-docker
 code --install-extension bradlc.vscode-tailwindcss
 code --install-extension mongodb.mongodb-vscode
 ```
+
+# Test Docker and mongo
+
+- docker run --rm --name cmdev-mongo-rm -p 27019:27017 -d mongo
+- mongodb://localhost:27019
