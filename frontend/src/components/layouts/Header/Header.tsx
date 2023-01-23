@@ -72,17 +72,10 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 type HeaderProps = {
   open: boolean;
+  handleDrawerOpen: () => void;
 };
 export default function Header(props: HeaderProps) {
   const theme = useTheme();
-
-  const handleDrawerOpen = () => {
-    // setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    // setOpen(false);
-  };
 
   return (
     <AppBar position="fixed" open={props.open}>
@@ -90,7 +83,7 @@ export default function Header(props: HeaderProps) {
         <IconButton
           color="inherit"
           aria-label="open drawer"
-          onClick={handleDrawerOpen}
+          onClick={props.handleDrawerOpen}
           edge="start"
           sx={{ mr: 2, ...(props.open && { display: "none" }) }}
         >
