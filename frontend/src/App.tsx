@@ -19,9 +19,19 @@ export default function App({}: Props) {
       <Sub2 />
       <Sub3 />
       <Sub4 />
+      <MyComponent username="lek" />
     </div>
   );
 }
+
+const MyComponent = (props: any) => {
+  return (
+    <div>
+      <h1>MyComponent</h1>
+      <h3>Username: {props.username}</h3>
+    </div>
+  );
+};
 
 // fn(x,y) = x2+y2
 const Sub2 = () => <h1>Sub2</h1>;
