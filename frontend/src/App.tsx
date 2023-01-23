@@ -11,6 +11,9 @@ export default function App({}: Props) {
   // JSX(TSX)
   return (
     <div>
+      <button onClick={() => alert("Hey")}>ClickMe</button>
+      <br />
+      <br />
       <button>{tmp1}</button>
       <button>{tmp2}</button>
       <button>{tmp3}</button>
@@ -19,7 +22,7 @@ export default function App({}: Props) {
       <Sub2 />
       <Sub3 />
       <Sub4 />
-      <MyComponent username="lek" password="1234" />
+      <MyComponent username="lek" password="1234" level="admin" />
     </div>
   );
 }
@@ -27,6 +30,7 @@ export default function App({}: Props) {
 type MyComponentProps = {
   username: string;
   password: string;
+  level?: string;
 };
 
 const MyComponent = (props: MyComponentProps) => {
@@ -35,6 +39,7 @@ const MyComponent = (props: MyComponentProps) => {
       <h1>MyComponent</h1>
       <h3>Username: {props.username}</h3>
       <h3>Password: {props.password}</h3>
+      <h3>Level: {props.level}</h3>
     </div>
   );
 };
