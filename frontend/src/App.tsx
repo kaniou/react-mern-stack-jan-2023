@@ -30,7 +30,7 @@ import StockEditPage from "./components/pages/StockEditPage";
 import StockPage from "./components/pages/StockPage";
 import TransactionPage from "./components/pages/TransactionPage";
 import { Container, createTheme, ThemeProvider } from "@mui/material";
-import { blue } from "@mui/material/colors";
+import { blue, orange } from "@mui/material/colors";
 
 const drawerWidth = 240;
 
@@ -84,7 +84,6 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 }));
 
 export default function App() {
- 
   const theme = createTheme({
     components: {
       MuiButton: {
@@ -116,13 +115,15 @@ export default function App() {
     },
     palette: {
       primary:
-        import.meta.env.VITE_IS_PRODUCTION === "1" ? { main: "#C1272D" } : blue,
+        import.meta.env.VITE_IS_PRODUCTION === "1"
+          ? { main: "#C1272D" }
+          : orange,
       background: {
         default: "#EEE",
       },
     },
   });
-  
+
   const [open, setOpen] = React.useState(true);
 
   const handleDrawerOpen = () => {
