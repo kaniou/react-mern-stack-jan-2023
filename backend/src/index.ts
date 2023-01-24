@@ -3,7 +3,6 @@ import * as bodyParser from "body-parser";
 import { Request, Response } from "express";
 import { AppDataSource } from "./data-source";
 import { Routes } from "./routes";
-import { User } from "./entity/User";
 
 AppDataSource.initialize()
   .then(async () => {
@@ -38,9 +37,9 @@ AppDataSource.initialize()
     // ...
 
     // start express server
-    app.listen(3000);
+    app.listen(8081);
     console.log(
-      "Express server has started on port 3000. Open http://localhost:3000/users to see results"
+      "Express server has started on port 8081. Open http://localhost:8081/users to see results"
     );
   })
   .catch((error) => console.log(error));
