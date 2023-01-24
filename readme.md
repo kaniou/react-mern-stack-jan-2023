@@ -32,8 +32,17 @@ code --install-extension mongodb.mongodb-vscode
 - docker run --rm --name cmdev-mongo-rm -p 27019:27017 -d mongo
 - mongodb://localhost:27019
 
-
 # New react project with vite
+
 - yarn --version
 - sudo npm i -g yarn
 - yarn create vite
+
+# env
+
+```
+VITE_IS_PRODUCTION=1
+VITE_VERSION=1.0
+VITE_NODE_URL=http://localhost:8081
+PORT=3000
+```
