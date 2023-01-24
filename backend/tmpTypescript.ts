@@ -1,5 +1,4 @@
-// node tmp.js
-// npm i -g nodemon
+// tsc tmpTypescript.ts
 console.log("I am a javascript file 1234");
 
 const tsTmp0: number = 0;
