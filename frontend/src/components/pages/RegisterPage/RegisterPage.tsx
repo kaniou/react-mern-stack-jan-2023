@@ -37,7 +37,7 @@ const formValidateSchema = Yup.object().shape({
 type Props = {};
 
 export default function RegisterPage({}: Props) {
-  const initialValue: User = { username: "admin", password: "1234" };
+  const initialValue: User = { username: "", password: "" };
   const navigate = useNavigate();
 
   const {
@@ -117,14 +117,14 @@ export default function RegisterPage({}: Props) {
 
         <Button
           sx={{ marginTop: 2 }}
-          onClick={() => navigate("/register")}
+          onClick={() => navigate("/login")}
           type="button"
           fullWidth
           variant="outlined"
           className="border-dashed border-1 border-gray-300"
           color="primary"
         >
-          Register
+          Cancel
         </Button>
       </form>
     );
