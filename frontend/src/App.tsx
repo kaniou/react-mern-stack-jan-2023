@@ -107,17 +107,13 @@ export default function App() {
     },
     spacing: 8,
     typography: {
-      fontFamily: "Roboto",
-      fontWeightLight: 100,
+      fontFamily: "Chakra Petch",
+      fontWeightLight: 300,
       fontWeightRegular: 400,
-      fontWeightMedium: 500,
-      fontWeightBold: 600,
     },
     palette: {
       primary:
-        import.meta.env.VITE_IS_PRODUCTION === "1"
-          ? { main: "#C1272D" }
-          : orange,
+        import.meta.env.VITE_IS_PRODUCTION === "1" ? { main: "#C1272D" } : blue,
       background: {
         default: "#EEE",
       },
