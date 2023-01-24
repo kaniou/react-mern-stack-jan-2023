@@ -47,9 +47,13 @@ export default function LoginPage({}: Props) {
     resolver: yupResolver(formValidateSchema),
   });
 
+  const onSubmit = async (values: User) => {
+    alert(JSON.stringify(values));
+  };
+
   const showForm = () => {
     return (
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <Controller
           name="username"
           control={control}
