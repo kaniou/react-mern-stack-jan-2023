@@ -11,6 +11,7 @@ import {
 import Payment from "@/components/fragments/Payment";
 import React from "react";
 import loginBg from "@/assets/images/bg4.jpg";
+import { User } from "@/types/user.type";
 
 const classes: any = {
   root: { display: "flex", justifyContent: "center", alignItems: "center" },
@@ -21,13 +22,15 @@ const classes: any = {
 type Props = {};
 
 export default function LoginPage({}: Props) {
+  const initialValue: User = { username: "", password: "" };
+
   const showForm = () => {
     return (
       <form>
         <TextField
           variant="outlined"
           margin="normal"
-          fullWidth          
+          fullWidth
           label="Username"
           autoComplete="email"
           autoFocus
