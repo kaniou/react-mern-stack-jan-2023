@@ -1,5 +1,7 @@
 // tsc tmpTypescript.ts
-console.log("I am a javascript file 1234");
+// ts-node tmpTypescript.ts
+// ts-node-dev tmpTypescript.ts
+console.log("I am a typescript file 1234");
 
 const tsTmp0: number = 0;
 const tsTmp1: boolean = true;
