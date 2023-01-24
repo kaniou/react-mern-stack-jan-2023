@@ -64,13 +64,20 @@ export default function LoginPage({}: Props) {
           )}
         />
 
-        <TextField
-          variant="outlined"
-          margin="normal"
-          fullWidth
-          label="Password"
-          autoComplete="email"
-          autoFocus
+        <Controller
+          control={control}
+          name="password"
+          render={({ field }) => (
+            <TextField
+              {...field}
+              variant="outlined"
+              margin="normal"
+              fullWidth
+              label="Password"
+              autoComplete="email"
+              autoFocus
+            />
+          )}
         />
       </form>
     );
