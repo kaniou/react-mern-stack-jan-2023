@@ -31,6 +31,7 @@ import StockPage from "./components/pages/StockPage";
 import TransactionPage from "./components/pages/TransactionPage";
 import { Container, createTheme, ThemeProvider } from "@mui/material";
 import { blue, orange } from "@mui/material/colors";
+import backgroundMenuImage from "@/assets/images/background_menu.jpg";
 
 const drawerWidth = 240;
 
@@ -96,7 +97,8 @@ export default function App() {
       MuiDrawer: {
         styleOverrides: {
           paper: {
-            backgroundImage: `url('src/assets/images/background_menu')`,
+            // backgroundImage: "url(/src/assets/images/background_menu.jpg)",
+            backgroundImage: `url(${backgroundMenuImage})`,
             backgroundRepeat: "no-repeat",
             backgroundColor: "#f2fcff",
             backgroundPosition: "bottom",
