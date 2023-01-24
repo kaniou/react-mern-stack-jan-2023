@@ -34,7 +34,7 @@ const formValidateSchema = Yup.object().shape({
 type Props = {};
 
 export default function LoginPage({}: Props) {
-  const initialValue: User = { username: "", password: "" };
+  const initialValue: User = { username: "admin", password: "1234" };
 
   const {
     control,
@@ -48,14 +48,22 @@ export default function LoginPage({}: Props) {
   const showForm = () => {
     return (
       <form>
-        <TextField
-          variant="outlined"
-          margin="normal"
-          fullWidth
-          label="Username"
-          autoComplete="email"
-          autoFocus
+        <Controller
+          control={control}
+          name="username"
+          render={({ field }) => (
+            <TextField
+              {...field}
+              variant="outlined"
+              margin="normal"
+              fullWidth
+              label="Username"
+              autoComplete="email"
+              autoFocus
+            />
+          )}
         />
+
         <TextField
           variant="outlined"
           margin="normal"
