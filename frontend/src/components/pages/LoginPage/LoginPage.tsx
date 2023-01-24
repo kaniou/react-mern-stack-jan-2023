@@ -1,6 +1,6 @@
 import { Box, Button } from "@mui/material";
 // import Payment from "../../fragments/Payment/Payment";
-import Payment from "@/components/fragments/Payment/Payment";
+import Payment from "@/components/fragments/Payment";
 import React from "react";
 
 type Props = {};
