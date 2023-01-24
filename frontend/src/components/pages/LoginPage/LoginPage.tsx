@@ -1,55 +1,14 @@
-import * as React from "react";
-import { useState } from "react";
+import { Box, Button } from "@mui/material";
+import React from "react";
 
-type LoginPageProps = {
-  //
-};
+type Props = {};
 
-const LoginPage: React.FC<any> = () => {
-  // let user = { username: "", password: "" };
-  const [user, setUser] = useState({ username: "", password: "" });
-
+export default function LoginPage({}: Props) {
   return (
-    <div>
-      <span style={{ backgroundColor: "#F00", paddingTop: 100 }}>1234</span>
-      <form
-        onSubmit={(event) => {
-          event.preventDefault();
-          alert(JSON.stringify(user));
-        }}
-      >
-        <input
-          onChange={(event) =>
-            setUser({ ...user, username: event.target.value })
-          }
-          value={user.username}
-          type="text"
-          placeholder="Username"
-        />{" "}
-        <br />
-        <input
-          type="text"
-          value={user.password}
-          placeholder="Password"
-          onChange={(event) => {
-            setUser({ ...user, password: event.target.value });
-          }}
-        />{" "}
-        <br />
-        <button type="submit">Submit</button> |
-        <button
-          type="button"
-          onClick={(event) => {
-            setUser({ username: "", password: "" });
-          }}
-        >
-          Clear
-        </button>
-        <br />
-        <span>#Debug: {JSON.stringify(user)}</span>
-      </form>
-    </div>
+    <Box>
+      <Button variant="contained">Btn1</Button>
+      <Button variant="contained">Btn2</Button>
+      <Button variant="contained">Btn3</Button>
+    </Box>
   );
-};
-
-export default LoginPage;
+}

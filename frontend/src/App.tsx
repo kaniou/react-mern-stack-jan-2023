@@ -29,7 +29,7 @@ import StockCreatePage from "./components/pages/StockCreatePage";
 import StockEditPage from "./components/pages/StockEditPage";
 import StockPage from "./components/pages/StockPage";
 import TransactionPage from "./components/pages/TransactionPage";
-import { Container } from "@mui/material";
+import { Container, ThemeProvider } from "@mui/material";
 
 const drawerWidth = 240;
 
@@ -95,32 +95,33 @@ export default function App() {
   };
 
   return (
-    <Box sx={{ display: "flex" }}>
-      <CssBaseline />
-      <Header open={open} handleDrawerOpen={handleDrawerOpen} />
-      <Menu open={open} handleDrawerClose={handleDrawerClose} />
-      <Main open={open}>
-        <Container>
-          <DrawerHeader />
-          
-          <Routes>
-            {/* Protected routes */}
+    <ThemeProvider theme={theme}>
+      <Box sx={{ display: "flex" }}>
+        <CssBaseline />
+        <Header open={open} handleDrawerOpen={handleDrawerOpen} />
+        <Menu open={open} handleDrawerClose={handleDrawerClose} />
+        <Main open={open}>
+          <Container>
+            <DrawerHeader />
 
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} />
-            <Route path="/shop" element={<ShopPage />} />
-            <Route path="/stock" element={<StockPage />} />
-            <Route path="/report" element={<ReportPage />} />
-            <Route path="/stock/create" element={<StockCreatePage />} />
-            <Route path="/stock/edit/:id" element={<StockEditPage />} />
-            <Route path="/report" element={<ReportPage />} />
-            <Route path="/transaction" element={<TransactionPage />} />
-            <Route path="/" element={<Navigate to="/report" />} />
-            <Route path="/" element={<Navigate to="/login" />} />
-            <Route path="*" element={<Navigate to="/login" />} />
-          </Routes>
-        </Container>
-      </Main>
-    </Box>
+            <Routes>
+              {/* Protected routes */}
+
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/register" element={<RegisterPage />} />
+              <Route path="/shop" element={<ShopPage />} />
+              <Route path="/stock" element={<StockPage />} />
+              <Route path="/report" element={<ReportPage />} />
+              <Route path="/stock/create" element={<StockCreatePage />} />
+              <Route path="/stock/edit/:id" element={<StockEditPage />} />
+              <Route path="/report" element={<ReportPage />} />
+              <Route path="/transaction" element={<TransactionPage />} />
+              <Route path="/" element={<Navigate to="/login" />} />
+              <Route path="*" element={<Navigate to="/login" />} />
+            </Routes>
+          </Container>
+        </Main>
+      </Box>
+    </ThemeProvider>
   );
 }
