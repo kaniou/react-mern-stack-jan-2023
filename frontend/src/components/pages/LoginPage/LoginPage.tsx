@@ -3,6 +3,7 @@ import {
   Button,
   Card,
   CardContent,
+  Grid,
   InputAdornment,
   TextField,
   Typography,
@@ -97,6 +98,32 @@ export default function LoginPage({}: Props) {
             />
           )}
         />
+
+        <Button
+          sx={classes.submitBtn}
+          type="submit"
+          fullWidth
+          variant="contained"
+          color="primary"
+        >
+          Login
+        </Button>
+
+        <Grid container>
+          <Button
+            sx={{ marginTop: 2 }}
+            onClick={() => {
+              // navigate("/register");
+            }}
+            type="button"
+            fullWidth
+            variant="outlined"
+            className="border-dashed border-1 border-gray-300"
+            color="primary"
+          >
+            Register
+          </Button>
+        </Grid>
       </form>
     );
   };
