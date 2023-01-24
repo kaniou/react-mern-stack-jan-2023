@@ -12,6 +12,9 @@ import Payment from "@/components/fragments/Payment";
 import React from "react";
 import loginBg from "@/assets/images/bg4.jpg";
 import { User } from "@/types/user.type";
+import { useForm, Controller } from "react-hook-form";
+import * as Yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 const classes: any = {
   root: { display: "flex", justifyContent: "center", alignItems: "center" },
@@ -19,10 +22,28 @@ const classes: any = {
   canelBtn: { marginTop: 2 },
 };
 
+const formValidateSchema = Yup.object().shape({
+  // username: Yup.string().email("Invalid email address").required("Email is required").trim(),
+  username: Yup.string()
+    .min(4)
+    .required("Username must be more than 3 letters")
+    .trim(),
+  password: Yup.string().required("Password is required").trim(),
+});
+
 type Props = {};
 
 export default function LoginPage({}: Props) {
   const initialValue: User = { username: "", password: "" };
+
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<User>({
+    defaultValues: initialValue,
+    resolver: yupResolver(formValidateSchema),
+  });
 
   const showForm = () => {
     return (
