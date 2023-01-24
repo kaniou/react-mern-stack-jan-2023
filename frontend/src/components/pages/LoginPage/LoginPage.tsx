@@ -1,4 +1,5 @@
 import { Box, Button } from "@mui/material";
+import Payment from "../../fragments/Payment/Payment";
 import React from "react";
 
 type Props = {};
