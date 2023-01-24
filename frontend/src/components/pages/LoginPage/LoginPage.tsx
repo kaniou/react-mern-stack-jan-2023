@@ -17,6 +17,7 @@ import { useForm, Controller } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Icons from "@mui/icons-material/";
+import { useNavigate } from "react-router-dom";
 
 const classes: any = {
   root: { display: "flex", justifyContent: "center", alignItems: "center" },
@@ -37,6 +38,7 @@ type Props = {};
 
 export default function LoginPage({}: Props) {
   const initialValue: User = { username: "admin", password: "1234" };
+  const navigate = useNavigate();
 
   const {
     control,
@@ -115,9 +117,7 @@ export default function LoginPage({}: Props) {
 
         <Button
           sx={{ marginTop: 2 }}
-          onClick={() => {
-            // navigate("/register");
-          }}
+          onClick={() => navigate("/register")}
           type="button"
           fullWidth
           variant="outlined"
