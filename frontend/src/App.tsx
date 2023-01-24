@@ -30,6 +30,7 @@ import StockEditPage from "./components/pages/StockEditPage";
 import StockPage from "./components/pages/StockPage";
 import TransactionPage from "./components/pages/TransactionPage";
 import { Container, createTheme, ThemeProvider } from "@mui/material";
+import { blue } from "@mui/material/colors";
 
 const drawerWidth = 240;
 
@@ -88,14 +89,37 @@ export default function App() {
       MuiButton: {
         styleOverrides: {
           root: {
-            borderRadius: 60,
-            backgroundColor: "#F00",
+            borderRadius: 30,
+          },
+        },
+      },
+      MuiDrawer: {
+        styleOverrides: {
+          paper: {
+            backgroundImage: `url('src/assets/images/background_menu')`,
+            backgroundRepeat: "no-repeat",
+            backgroundColor: "#f2fcff",
+            backgroundPosition: "bottom",
+            width: drawerWidth,
           },
         },
       },
     },
-
-    spacing: 20,
+    spacing: 8,
+    typography: {
+      fontFamily: "Roboto",
+      fontWeightLight: 100,
+      fontWeightRegular: 400,
+      fontWeightMedium: 500,
+      fontWeightBold: 600,
+    },
+    palette: {
+      primary:
+        import.meta.env.VITE_IS_PRODUCTION === "1" ? { main: "#C1272D" } : blue,
+      background: {
+        default: "#EEE",
+      },
+    },
   });
   const [open, setOpen] = React.useState(true);
 
