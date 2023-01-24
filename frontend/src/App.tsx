@@ -84,6 +84,17 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 export default function App() {
   const theme = createTheme({
+    components: {
+      MuiButton: {
+        styleOverrides: {
+          root: {
+            borderRadius: 60,
+            backgroundColor: "#F00",
+          },
+        },
+      },
+    },
+
     spacing: 20,
   });
   const [open, setOpen] = React.useState(true);
