@@ -55,7 +55,7 @@ export default function LoginPage({}: Props) {
 
   const showForm = () => {
     return (
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form noValidate onSubmit={handleSubmit(onSubmit)}>
         <Controller
           name="username"
           control={control}
