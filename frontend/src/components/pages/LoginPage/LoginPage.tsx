@@ -109,21 +109,19 @@ export default function LoginPage({}: Props) {
           Login
         </Button>
 
-        <Grid container>
-          <Button
-            sx={{ marginTop: 2 }}
-            onClick={() => {
-              // navigate("/register");
-            }}
-            type="button"
-            fullWidth
-            variant="outlined"
-            className="border-dashed border-1 border-gray-300"
-            color="primary"
-          >
-            Register
-          </Button>
-        </Grid>
+        <Button
+          sx={{ marginTop: 2 }}
+          onClick={() => {
+            // navigate("/register");
+          }}
+          type="button"
+          fullWidth
+          variant="outlined"
+          className="border-dashed border-1 border-gray-300"
+          color="primary"
+        >
+          Register
+        </Button>
       </form>
     );
   };
