@@ -29,7 +29,7 @@ import StockCreatePage from "./components/pages/StockCreatePage";
 import StockEditPage from "./components/pages/StockEditPage";
 import StockPage from "./components/pages/StockPage";
 import TransactionPage from "./components/pages/TransactionPage";
-import { Container, ThemeProvider } from "@mui/material";
+import { Container, createTheme, ThemeProvider } from "@mui/material";
 
 const drawerWidth = 240;
 
@@ -83,7 +83,9 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 }));
 
 export default function App() {
-  const theme = useTheme();
+  const theme = createTheme({
+    spacing: 20,
+  });
   const [open, setOpen] = React.useState(true);
 
   const handleDrawerOpen = () => {

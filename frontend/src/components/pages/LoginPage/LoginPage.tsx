@@ -6,7 +6,9 @@ type Props = {};
 export default function LoginPage({}: Props) {
   return (
     <Box>
-      <Button variant="contained">Btn1</Button>
+      <Button sx={{ marginRight: 2 }} variant="contained">
+        Btn1
+      </Button>
       <Button variant="contained">Btn2</Button>
       <Button variant="contained">Btn3</Button>
     </Box>
