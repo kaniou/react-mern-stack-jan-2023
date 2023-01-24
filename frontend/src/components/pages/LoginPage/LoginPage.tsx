@@ -49,15 +49,24 @@ export default function LoginPage({}: Props) {
     return (
       <form>
         <Controller
-          control={control}
           name="username"
+          control={control}
           render={({ field }) => (
             <TextField
+              error={Boolean(errors.username?.message)}
+              helperText={errors.username?.message}
               {...field}
               variant="outlined"
               margin="normal"
               fullWidth
               label="Username"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <Icons.Email />
+                  </InputAdornment>
+                ),
+              }}
               autoComplete="email"
               autoFocus
             />
@@ -65,17 +74,25 @@ export default function LoginPage({}: Props) {
         />
 
         <Controller
-          control={control}
           name="password"
+          control={control}
           render={({ field }) => (
             <TextField
+              helperText={errors.password?.message}
+              error={Boolean(errors.password?.message)}
               {...field}
               variant="outlined"
               margin="normal"
               fullWidth
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <Icons.Password />
+                  </InputAdornment>
+                ),
+              }}
               label="Password"
-              autoComplete="email"
-              autoFocus
+              type="password"
             />
           )}
         />
