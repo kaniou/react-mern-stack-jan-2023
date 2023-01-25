@@ -6,13 +6,13 @@ type stateProp = {
 };
 const defaultState: stateProp = { count: 0 };
 
-const addAsync = createAsyncThunk("counter/addAsync", async () => {
+export const addAsync = createAsyncThunk("counter/addAsync", async () => {
   // do something such as connecting server to feed something
   // simulate such task with settimeout
   await new Promise((resolve) => setTimeout(resolve, 1000));
 });
 
-const removeAsync = createAsyncThunk("counter/removeAsync", async () => {
+export const removeAsync = createAsyncThunk("counter/removeAsync", async () => {
   // do something such as connecting server to feed something
   // simulate such task with settimeout
   await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -30,7 +30,14 @@ const counterSlice = createSlice({
       state.count = state.count - 1;
     },
   },
-  extraReducers: (builder) => {},
+  extraReducers: (builder) => {
+    builder.addCase(addAsync.fulfilled, (state, action) => {
+      state.count = state.count + 1;
+    });
+    builder.addCase(removeAsync.fulfilled, (state, action) => {
+      state.count = state.count - 1;
+    });
+  },
 });
 
 export const { add, remove } = counterSlice.actions;
