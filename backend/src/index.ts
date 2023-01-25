@@ -11,6 +11,10 @@ AppDataSource.initialize()
     // mac - set path
     // export ROOT_PATH=$(pwd)
     // echo $ROOT_PATH  
+
+    // win - set path
+    // set ROOT_PATH=%cd%
+    // echo %ROOT_PATH%  
     app.use(express.static(process.env.ROOT_PATH + "/uploaded"));
 
     // register express routes from defined application routes
