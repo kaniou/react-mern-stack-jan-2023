@@ -31,9 +31,11 @@ const counterSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
+    // addAsync
     builder.addCase(addAsync.fulfilled, (state, action) => {
       state.count = state.count + 1;
     });
+    // removeAsync
     builder.addCase(removeAsync.fulfilled, (state, action) => {
       state.count = state.count - 1;
     });
