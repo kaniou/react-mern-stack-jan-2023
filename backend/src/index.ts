@@ -1,5 +1,4 @@
 import * as express from "express";
-import * as bodyParser from "body-parser";
 import { Request, Response } from "express";
 import { AppDataSource } from "./data-source";
 import { Routes } from "./routes";
@@ -8,7 +7,11 @@ AppDataSource.initialize()
   .then(async () => {
     // create express app
     const app = express();
-    app.use(bodyParser.json());
+    app.use(express.json());
+    // mac - set path
+    // export ROOT_PATH=$(pwd)
+    // echo $ROOT_PATH  
+    app.use(express.static(process.env.ROOT_PATH + "/uploaded"));
 
     // register express routes from defined application routes
     Routes.forEach((route) => {
