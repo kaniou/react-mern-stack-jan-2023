@@ -52,9 +52,18 @@ export default function RegisterPage({}: Props) {
 
   const onSubmit = async (values: User) => {
     // alert(JSON.stringify(values));
-    axios.post("http://localhost:8081/api/v2/register", values).then((result) => {
-        alert(JSON.stringify(result));
-      });
+    // axios
+    //   .post("http://localhost:8081/api/v2/register", values)
+    //   .then((result) => {
+    //     alert(JSON.stringify(result.data));
+    //   });
+
+    const result = await axios.post(
+      "http://localhost:8081/api/v2/register",
+      values
+    );
+
+    alert(JSON.stringify(result.data));
   };
 
   const showForm = () => {
