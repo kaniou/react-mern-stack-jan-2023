@@ -18,7 +18,7 @@ import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Icons from "@mui/icons-material/";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { httpClient } from "@/utils/HttpClient";
 
 const classes: any = {
   root: { display: "flex", justifyContent: "center", alignItems: "center" },
@@ -51,13 +51,14 @@ export default function RegisterPage({}: Props) {
   });
 
   const onSubmit = async (values: User) => {
-    
-    // interceptor
-    const result = await axios.post(
-      "http://localhost:8081/api/v2/register",
-      values
-    );
+    // manula
+    // const result = await axios.post(
+    //   "http://localhost:8081/api/v2/register",
+    //   values
+    // );
 
+    // manula
+    const result = await httpClient.post("register", values);
     alert(JSON.stringify(result.data));
   };
 
