@@ -137,7 +137,7 @@ export default function LoginPage({}: Props) {
       <Card sx={{ maxWidth: 345 }}>
         <CardContent>
           <Typography gutterBottom variant="h5">
-            Login {counterReducer.count}
+            Login ({counterReducer.count})
           </Typography>
 
           {showForm()}
