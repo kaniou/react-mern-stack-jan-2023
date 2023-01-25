@@ -19,6 +19,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Icons from "@mui/icons-material/";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { RootState } from "@/store/store";
 
 const classes: any = {
   root: { display: "flex", justifyContent: "center", alignItems: "center" },
@@ -40,7 +41,9 @@ type Props = {};
 export default function LoginPage({}: Props) {
   const initialValue: User = { username: "admin", password: "1234" };
   const navigate = useNavigate();
-  const counterReducer = useSelector((state: any) => state.counterReducer);
+  const counterReducer = useSelector(
+    (state: RootState) => state.counterReducer
+  );
 
   const {
     control,
