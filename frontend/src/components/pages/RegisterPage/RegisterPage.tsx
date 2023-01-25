@@ -18,6 +18,7 @@ import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Icons from "@mui/icons-material/";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const classes: any = {
   root: { display: "flex", justifyContent: "center", alignItems: "center" },
@@ -50,7 +51,7 @@ export default function RegisterPage({}: Props) {
   });
 
   const onSubmit = async (values: User) => {
-    alert(JSON.stringify(values));
+    // alert(JSON.stringify(values));
   };
 
   const showForm = () => {
