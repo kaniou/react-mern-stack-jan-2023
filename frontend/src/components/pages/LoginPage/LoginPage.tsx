@@ -130,6 +130,28 @@ export default function LoginPage({}: Props) {
         >
           Register
         </Button>
+
+        <Box className="flex flex-row mt-[20px]">
+          <Button
+            type="button"
+            fullWidth
+            variant="outlined"
+            className="border-dashed border-1 border-gray-300"
+            color="primary"
+          >
+            <Icons.Delete />
+          </Button>
+
+          <Button
+            type="button"
+            fullWidth
+            variant="outlined"
+            className="border-dashed border-1 border-gray-300"
+            color="primary"
+          >
+            <Icons.Add />
+          </Button>
+        </Box>
       </form>
     );
   };
