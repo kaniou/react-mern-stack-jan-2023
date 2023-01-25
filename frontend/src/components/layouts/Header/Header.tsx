@@ -18,6 +18,8 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
+import { counterSelector } from "@/store/slices/counterSlice";
+import { useSelector } from "react-redux";
 
 const drawerWidth = 240;
 
@@ -75,7 +77,7 @@ type HeaderProps = {
   handleDrawerOpen: () => void;
 };
 export default function Header(props: HeaderProps) {
-  const theme = useTheme();
+  const counterReducer = useSelector(counterSelector);
 
   return (
     <AppBar position="fixed" open={props.open}>
@@ -90,7 +92,7 @@ export default function Header(props: HeaderProps) {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" noWrap component="div">
-          Persistent drawer
+          Persistent drawer ({counterReducer.count})
         </Typography>
       </Toolbar>
     </AppBar>
