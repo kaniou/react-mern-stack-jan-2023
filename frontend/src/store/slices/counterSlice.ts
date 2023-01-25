@@ -9,9 +9,16 @@ const defaultState: stateProp = { count: 0 };
 const counterSlice = createSlice({
   name: "counter",
   initialState: defaultState,
-  reducers: {},
+  reducers: {
+    add: (state) => {
+      state.count = state.count + 1;
+    },
+    delete: (state) => {
+      state.count = state.count - 1;
+    },
+  },
 });
 
-export const {} = counterSlice.actions;
+export const {add, delete} = counterSlice.actions;
 export default counterSlice.reducer;
 export const counterSelector = (state: RootState) => state.counterReducer;
