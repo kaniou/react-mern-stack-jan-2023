@@ -1,1 +1,6 @@
+### users
 GET http://localhost:8081/users HTTP/1.1
+
+
+### products
+GET http://localhost:8081/products HTTP/1.1
