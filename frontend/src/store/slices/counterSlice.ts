@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from "../store";
 
 type stateProp = {
   count: number;
@@ -13,3 +14,4 @@ const counterSlice = createSlice({
 
 export const {} = counterSlice.actions;
 export default counterSlice.reducer;
+export const counterSelector = (state: RootState) => state.counterReducer;
