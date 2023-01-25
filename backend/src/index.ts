@@ -2,19 +2,21 @@ import * as express from "express";
 import { Request, Response } from "express";
 import { AppDataSource } from "./data-source";
 import { Routes } from "./routes";
+import * as cors from "cors";
 
 AppDataSource.initialize()
   .then(async () => {
     // create express app
     const app = express();
     app.use(express.json());
+    app.use(cors());
     // mac - set path
     // export ROOT_PATH=$(pwd)
-    // echo $ROOT_PATH  
+    // echo $ROOT_PATH
 
     // win - set path
     // set ROOT_PATH=%cd%
-    // echo %ROOT_PATH%  
+    // echo %ROOT_PATH%
     app.use(express.static(process.env.ROOT_PATH + "/uploaded"));
 
     // register express routes from defined application routes
