@@ -14,11 +14,13 @@ export class UserController {
       req.body.__v = savedValue(req.body.__v, 0);
       req.body.password = await bcrypt.hash(req.body.password, 8);
 
-      const doc = await this.userRepository.save(req.body);
+      // const doc = await this.userRepository.save(req.body);
       // return { result: "ok", message: doc };
+
+      await this.userRepository.save(req.body);
       return { result: "ok", message: "register successfully" };
     } catch (e) {
-      return { result: "nok", message: "invalid data" };
+      return { result: "nok", message: "register failed" };
     }
   }
 
