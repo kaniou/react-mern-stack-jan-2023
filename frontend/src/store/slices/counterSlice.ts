@@ -13,12 +13,12 @@ const counterSlice = createSlice({
     add: (state) => {
       state.count = state.count + 1;
     },
-    delete: (state) => {
+    remove: (state) => {
       state.count = state.count - 1;
     },
   },
 });
 
-export const {add, delete} = counterSlice.actions;
+export const { add, remove } = counterSlice.actions;
 export default counterSlice.reducer;
 export const counterSelector = (state: RootState) => state.counterReducer;

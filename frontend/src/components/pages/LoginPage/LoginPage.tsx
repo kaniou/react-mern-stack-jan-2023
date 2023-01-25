@@ -19,8 +19,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Icons from "@mui/icons-material/";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { RootState } from "@/store/store";
-import { counterSelector } from "@/store/slices/counterSlice";
+import { RootState, useAppDispatch } from "@/store/store";
+import { add, counterSelector, remove } from "@/store/slices/counterSlice";
 
 const classes: any = {
   root: { display: "flex", justifyContent: "center", alignItems: "center" },
@@ -43,6 +43,7 @@ export default function LoginPage({}: Props) {
   const initialValue: User = { username: "admin", password: "1234" };
   const navigate = useNavigate();
   const counterReducer = useSelector(counterSelector);
+  const dispatch = useAppDispatch();
 
   const {
     control,
@@ -133,6 +134,7 @@ export default function LoginPage({}: Props) {
 
         <Box className="flex flex-row mt-[20px]">
           <Button
+            onClick={() => dispatch(remove())}
             type="button"
             fullWidth
             variant="outlined"
@@ -143,6 +145,7 @@ export default function LoginPage({}: Props) {
           </Button>
 
           <Button
+            onClick={() => dispatch(add())}
             type="button"
             fullWidth
             variant="outlined"
