@@ -6,11 +6,11 @@ import { savedValue } from "../utils/cm-util";
 export class UserController {
   private userRepository = AppDataSource.getMongoRepository(Users);
 
-  async register(request: Request, response: Response, next: NextFunction) {
+  async register(req: Request, response: Response, next: NextFunction) {
     try {
       req.body.created = savedValue(req.body.created, new Date());
       req.body.level = savedValue(req.body.level, "normal");
-      req.body.__v = savedValue(req.body.__v, 0);      
+      req.body.__v = savedValue(req.body.__v, 0);
       const doc = await this.userRepository.save(req.body);
       return { result: "ok", message: doc };
     } catch (e) {
